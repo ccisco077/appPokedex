@@ -6,4 +6,8 @@
     </style>
 
     <style name="Theme.AppPokedex" parent="Base.Theme.AppPokedex" />
+
+    <style name="CustomProgressBarStyle" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_bar_custom</item>
+    </style>
 </resources>

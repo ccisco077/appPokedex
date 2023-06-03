@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fondo del ProgressBar -->
+    <item android:id="@android:id/background">
+        <shape>
+            <solid android:color="#CCCCCC" />
+            <corners android:radius="20dp"/>
+        </shape>
+    </item>
+
+    <!-- Línea de progreso -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <corners android:radius="20dp"/>
+                <solid android:color="@color/primary" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

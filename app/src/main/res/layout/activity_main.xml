@@ -6,51 +6,283 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="match_parent"
-        tools:layout_editor_absoluteY="match_parent">
-
-        <EditText
-            android:id="@+id/editTextText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text"
-            android:text="" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="245dp"
-            android:visibility="visible"
-            android:src="@drawable/d5s04qj_d26a072a_3294_4da7_8ab9_a1be78141275"/>
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:background="@color/primary"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Nombre:" />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/txtName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                <ImageView
+                    android:layout_width="101dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="fitStart"
+                    app:srcCompat="@drawable/lente"
+                    tools:srcCompat="@drawable/lente" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="86dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="false"
+                        android:baselineAlignBottom="false"
+                        android:cropToPadding="true"
+                        android:scaleType="fitEnd"
+                        android:scrollIndicators="none"
+                        app:srcCompat="@drawable/led" />
+
+                    <Spinner
+                        android:id="@+id/spinnerOptions"
+                        android:layout_width="314dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/border_drawable" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="15dp"
                 android:layout_weight="1"
-                android:text="" />
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/inputSearch"
+                    android:layout_width="237dp"
+                    android:layout_height="39dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_drawable"
+                    android:inputType="text"
+                    android:paddingStart="10dp" />
+
+                <Button
+                    android:id="@+id/btnSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FA830D1B"
+                    android:fontFamily="@font/hanalei_fill"
+                    android:text="Buscar"
+                    android:textColor="#FFEB3B"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@drawable/border_drawable"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/hanalei_fill"
+                    android:outlineAmbientShadowColor="@color/black"
+                    android:text="Pokemon"
+                    android:textColor="@color/primary"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/txtType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/hanalei_fill"
+                    android:outlineAmbientShadowColor="@color/black"
+                    android:text="" />
+
+                <ImageView
+                    android:id="@+id/imgPokedex"
+                    android:layout_width="347dp"
+                    android:layout_height="233dp"
+
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:srcCompat="@drawable/pokebola" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/txtHeigth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/tablePokemonDetails"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:background="@drawable/border_drawable"
+                android:padding="15dp">
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="73dp"
+                        android:layout_height="match_parent"
+                        android:text="Vida:"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ProgressBar
+                            android:id="@+id/barHP"
+                            style="@style/CustomProgressBarStyle"
+                            android:layout_width="255dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/cantHP"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="@color/porcentajes"
+                            android:textSize="16sp"
+                            tools:text="20" />
+
+                    </RelativeLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="73dp"
+                        android:layout_height="match_parent"
+                        android:text="Ataque:"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ProgressBar
+                            android:id="@+id/barAttack"
+                            style="@style/CustomProgressBarStyle"
+                            android:layout_width="255dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/cantAttack"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="@color/porcentajes"
+                            android:textSize="16sp"
+                            tools:text="20" />
+
+                    </RelativeLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="73dp"
+                        android:layout_height="match_parent"
+                        android:text="Defensa:"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ProgressBar
+                            android:id="@+id/barDef"
+                            style="@style/CustomProgressBarStyle"
+                            android:layout_width="255dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/cantDef"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="@color/porcentajes"
+                            android:textSize="16sp"
+                            tools:text="20" />
+
+                    </RelativeLayout>
+                </TableRow>
+            </TableLayout>
+
         </LinearLayout>
+    </ScrollView>
 
-        <Button
-            android:id="@+id/btnSearch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Pokedex" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
